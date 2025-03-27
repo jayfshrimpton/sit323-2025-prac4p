@@ -63,6 +63,51 @@ app.get('/divide', (req, res) => {
     res.send("The result of dividing " + num1 + " by " + num2 + " is " + result);
 });
 
+//Exponentiation
+app.get('/exponentiate', (req, res) => {
+    const num1 = parseFloat(req.query.num1);
+    const num2 = parseFloat(req.query.num2);
+
+    if (isNaN(num1) || isNaN(num2)) {
+        return res.status(400).send('Please provide valid numbers');
+    }
+
+    const result = num1 ** num2;
+
+    res.send("The result of raising " + num1 + " to the power of " + num2 + " is " + result);
+});
+
+//Square Root
+app.get('/sqrt', (req, res) => {
+    const num1 = parseFloat(req.query.num1);
+
+    if (isNaN(num1)) {
+        return res.status(400).send('Please provide a valid number');
+    }
+
+    const result = Math.sqrt(num1);
+
+    res.send("The square root of " + num1 + " is " + result);
+});
+
+//Modulo
+app.get('/modulo', (req, res) => {
+    const num1 = parseFloat(req.query.num1);
+    const num2 = parseFloat(req.query.num2);
+
+    if (isNaN(num1) || isNaN(num2)) {
+        return res.status(400).send('Please provide valid numbers');
+    }
+
+    if (num2 === 0) {
+        return res.status(400).send('Cannot divide by zero');
+    }
+
+    const result = num1 % num2;
+
+    res.send("The remainder of dividing " + num1 + " by " + num2 + " is " + result);
+});
+
 app.listen(PORT, () => {
     console.log(`Calculator service running on port ${PORT}`);
-  });
+});
