@@ -11,11 +11,14 @@
 2. **Microservice Development**
 
    - Created `server.js` as the main application file
-   - Implemented four arithmetic operations:
+   - Implemented seven arithmetic operations:
      - Addition
      - Subtraction
      - Multiplication
      - Division
+     - Exponentiation
+     - Modulo
+     - Square Root
 
 3. **Key Implementation Details**
 
@@ -42,3 +45,6 @@
 - `/subtract?num1=x&num2=y`
 - `/multiply?num1=x&num2=y`
 - `/divide?num1=x&num2=y`
+- `/exponentiate?num1=x&num2=y`
+- `/modulo?num1=x&num2=y`
+- `/sqrt?num1=x`
